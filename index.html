@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="grid-container">
+    <!-- tip calculator section -->
+    <section class="wrapper grid-container">
+      <!-- title -->
+      <img src="./images/logo.svg" class="logo" alt="logo" />
+      <!-- tip calculator container -->
+      <main class="tips-calc-container grid-container">
+        <!-- inputs container -->
+        <div class="inputs grid-container">
+          <!-- user input group -->
+          <div class="input-group">
+            <div class="info-container flex-container">
+              <label class="label">Bill</label>
+              <!-- <p class="error-msg">Can't be zero</p> -->
+            </div>
+            <div class="input-container flex-container">
+              <img
+                src="./images/icon-dollar.svg"
+                alt="dollar"
+                class="icon-img"
+              />
+              <input
+                id="bill-input"
+                class="user-input"
+                type="number"
+                placeholder="0"
+              />
+            </div>
+          </div>
+          <!-- user select group -->
+          <div class="select-group">
+            <label class="label">Select Tip %</label>
+            <div class="user-select grid-container">
+              <p class="option">5%</p>
+              <p class="option">10%</p>
+              <p class="option">15%</p>
+              <p class="option">25%</p>
+              <p class="option">50%</p>
+              <input
+                id="custom-input"
+                type="number"
+                class="user-input"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <!-- user input group -->
+          <div class="input-group">
+            <div class="info-container flex-container">
+              <label class="label">Number of People</label>
+              <p class="error-msg">Can't be zero</p>
+            </div>
+            <div class="input-container flex-container">
+              <img
+                src="./images/icon-person.svg"
+                alt="person"
+                class="icon-img"
+              />
+              <input
+                id="people-number-input"
+                class="user-input"
+                type="number"
+                placeholder="0"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- output container -->
+        <div class="output">
+          <div class="output-group flex-container">
+            <label class="label"
+              ><span>Tip Amount</span> <br />
+              / person</label
+            >
+            <p id="tip-value-output" class="output-value">$0.00</p>
+          </div>
+          <div class="output-group flex-container">
+            <label class="label"
+              ><span>Total</span> <br />
+              / person</label
+            >
+            <p id="total-value-output" class="output-value">$0.00</p>
+          </div>
+          <button id="reset-btn" class="btn inactive">RESET</button>
+        </div>
+      </main>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>

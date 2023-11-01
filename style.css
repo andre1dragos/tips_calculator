@@ -1,0 +1,247 @@
+/* global variables */
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --Error-state: #e67e22;
+}
+
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+input {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* reusable classes */
+.grid-container {
+  display: grid;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option.selected {
+  background: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.error-msg {
+  font-size: 1.3rem;
+  color: var(--Error-state);
+  display: none;
+}
+
+.border-error {
+  border-color: var(--Error-state) !important;
+}
+
+.show-error {
+  display: block;
+}
+
+.btn.inactive {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.btn.inactive:hover {
+  background: var(--Strong-cyan);
+}
+
+/* //////////////////////////////////////////// */
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--Light-grayish-cyan);
+}
+
+/* logo */
+.logo {
+  margin: 5rem auto;
+}
+
+/* tip calculator container */
+.tips-calc-container {
+  width: 100%;
+  background: var(--White);
+  padding: 3rem;
+  border-radius: 2rem 2rem 0 0;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.inputs,
+.output {
+  min-width: 100%;
+  gap: 2.5rem;
+}
+
+.info-container {
+  margin-bottom: 0.3rem;
+}
+
+/* labels */
+.label {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--Grayish-cyan);
+}
+
+/* inputs container */
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.icon-img {
+  position: absolute;
+  left: 1rem;
+}
+
+.user-input {
+  width: 100%;
+  background: var(--Very-light-grayish-cyan);
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--Very-dark-cyan);
+  text-align: right;
+  transition: 0.3s border ease-in-out;
+  caret-color: var(--Strong-cyan);
+}
+
+.select-group .label {
+  margin-bottom: 1rem;
+}
+
+.user-select {
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.user-input:focus {
+  border: 2px solid var(--Strong-cyan);
+}
+
+.option {
+  background: var(--Very-dark-cyan);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 2.4rem;
+  color: var(--White);
+  text-align: center;
+}
+
+.option,
+.user-input {
+  border: 2px solid transparent;
+}
+
+.user-select .user-input {
+  width: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.user-input::placeholder {
+  font-size: 2.4rem;
+  color: var(--Grayish-cyan);
+}
+
+.user-select .user-input::placeholder {
+  font-size: 2rem;
+}
+
+/* output container */
+.output {
+  background: var(--Very-dark-cyan);
+  padding: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.output .label span {
+  color: var(--White);
+}
+
+.output-value {
+  font-size: 3rem;
+  color: var(--Strong-cyan);
+}
+
+.btn {
+  background: var(--Strong-cyan);
+  margin-top: auto;
+  padding: 1rem 0;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--Very-dark-cyan);
+  line-height: 1.2;
+}
+
+/* responsive design */
+@media screen and (min-width: 850px) {
+  body {
+    place-content: center;
+  }
+
+  .wrapper {
+    padding: 0 3rem;
+    gap: 5rem;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .tips-calc-container {
+    width: 78rem;
+    border-radius: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .user-select {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .option,
+  .btn {
+    cursor: pointer;
+    transition: 0.3s background ease-in-out;
+  }
+
+  .option:hover,
+  .btn:hover {
+    background: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+  }
+}
